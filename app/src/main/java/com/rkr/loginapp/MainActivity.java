@@ -33,7 +33,11 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                 intent.putExtra("USERNAME", userName);
 
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
                 startActivity(intent);
+
+                finish();
             }
             else{
                 Toast.makeText(this, "Login Failed", Toast.LENGTH_SHORT).show();
